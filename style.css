@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: auto;
+    text-align: center;
+}
+
+html {
+    background: #dfdfdf;
+    height: 100vh;
+}
+
+body {
+    width: 80%;
+}
+
+img {
+    width: 60%;
+}
+
+#timer {
+    font-size: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: clamp(4rem, 40vw, 20rem);
+    word-wrap: break-word;
+}
+
+button {
+    border: none;
+}
+
+.set{
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.round {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

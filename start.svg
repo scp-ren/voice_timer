@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.5 70">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #202020;
+      }
+    </style>
+  </defs>
+  <g id="figre_all">
+    <g>
+      <rect class="cls-1" width="5" height="70"/>
+      <polygon class="cls-1" points="10.14 0 10.14 70 62.5 35 10.14 0"/>
+    </g>
+  </g>
+</svg>

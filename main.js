@@ -7,7 +7,6 @@ let initialSeconds = 0;
 const timeDisplay = document.getElementById("timeDisplay");
 const startButton = document.getElementById("startButton");
 const resetButton = document.getElementById("resetButton");
-const status = document.getElementById("status");
 
 function speak(text) {
   const utterance = new SpeechSynthesisUtterance(text);
@@ -30,10 +29,6 @@ function startTimer() {
   if (timerId !== null) return;
 
   if (!hasStarted) {
-    if (remainingSeconds <= 0) {
-      status.textContent = "まず時間を設定してください";
-      return;
-    }
     initialSeconds = remainingSeconds;
     hasStarted = true;
     speak("スタート");
@@ -48,13 +43,12 @@ function startTimer() {
     if (remainingSeconds === 1 * 60) speak("残り1分です");
 
     if (remainingSeconds <= 0) {
-      remainingSeconds = 0; // ← ここで負数防止
+      remainingSeconds = 0;
       updateDisplay();
       clearInterval(timerId);
       timerId = null;
       isRunning = false;
       hasStarted = false;
-      status.textContent = "時間になりました";
       speak("時間になりました");
     } else {
       updateDisplay();
@@ -63,7 +57,6 @@ function startTimer() {
 
   isRunning = true;
   updateDisplay();
-  status.textContent = "タイマー作動中";
 }
 
 function pauseTimer() {
@@ -71,7 +64,6 @@ function pauseTimer() {
     clearInterval(timerId);
     timerId = null;
     isRunning = false;
-    status.textContent += "（一時停止中）";
   }
 }
 
@@ -82,7 +74,6 @@ function resetTimer() {
   hasStarted = false;
   remainingSeconds = initialSeconds;
   updateDisplay();
-  status.textContent = "リセットしました。まだスタートしていません";
 }
 
 function adjustTime(secondsToAdjust) {
