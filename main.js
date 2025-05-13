@@ -15,7 +15,7 @@ function speak(text) {
 }
 
 function formatTime(seconds) {
-  const safeSeconds = Math.max(0, seconds); // 0未満は0として扱う
+  const safeSeconds = Math.max(0, seconds); // 0未満は0
   const m = Math.floor(safeSeconds / 60).toString().padStart(2, '0');
   const s = (safeSeconds % 60).toString().padStart(2, '0');
   return `${m}:${s}`;
@@ -36,8 +36,8 @@ function startTimer() {
 
   timerId = setInterval(() => {
     remainingSeconds--;
-
     if (remainingSeconds === 30 * 60) speak("残り30分です");
+    if (remainingSeconds === 20 * 60) speak("残り20分です");
     if (remainingSeconds === 10 * 60) speak("残り10分です");
     if (remainingSeconds === 5 * 60) speak("残り5分です");
     if (remainingSeconds === 1 * 60) speak("残り1分です");
@@ -49,7 +49,7 @@ function startTimer() {
       timerId = null;
       isRunning = false;
       hasStarted = false;
-      speak("時間になりました");
+      speak("終了です");
     } else {
       updateDisplay();
     }
